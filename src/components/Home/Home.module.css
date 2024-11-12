@@ -1,0 +1,24 @@
+.container {
+  padding: 20px 50px;
+}
+.add__btn {
+  padding: 10px 15px;
+  background-color: green;
+  color: white;
+  border: none;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.todos {
+  padding: 20px;
+  margin-block: 5px;
+}
+
+.true {
+  background-color: rgb(82, 195, 82);
+  color: white;
+}
+.false {
+  background-color: rgb(205, 94, 94);
+  color: white;
+}

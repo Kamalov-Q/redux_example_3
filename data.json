@@ -1,0 +1,78 @@
+{
+  "todos": [
+    {
+      "id": "2",
+      "title": "Uzgardi12",
+      "description": "Todo 21211",
+      "status": "Completed"
+    },
+    {
+      "id": "3",
+      "title": "fugiat veniam minus",
+      "status": "Failed",
+      "description": "Todo 3"
+    },
+    {
+      "id": "4",
+      "title": "et porro tempora",
+      "status": "Completed",
+      "description": "Todo 4"
+    },
+    {
+      "id": "5",
+      "title": "laboriosam mollitia et enim quasi adipisci quia provident illum",
+      "status": "Failed",
+      "description": "Todo 5"
+    },
+    {
+      "id": "6",
+      "title": "qui ullam ratione quibusdam voluptatem quia omnis",
+      "status": "Progress",
+      "description": "Todo 6"
+    },
+    {
+      "id": "7",
+      "title": "illo expedita consequatur quia in",
+      "status": "Failed",
+      "description": "Todo 7"
+    },
+    {
+      "id": "8",
+      "title": "quo adipisci enim quam ut ab",
+      "status": "Progress",
+      "description": "Todo 8"
+    },
+    {
+      "id": "9",
+      "title": "molestiae perspiciatis ipsa",
+      "status": "Failed",
+      "description": "Todo 9"
+    },
+    {
+      "id": "10",
+      "title": "illo est ratione doloremque quia maiores aut",
+      "status": "Completed",
+      "description": "Todo 10"
+    },
+    {
+      "id": "f9b14257-b765-4568-aeac-698f61d4aada",
+      "title": "Kamalov added",
+      "description": "Quwildi",
+      "status": "Completed"
+    }
+  ],
+  "statuses": [
+    {
+      "id": "1",
+      "name": "Progress"
+    },
+    {
+      "id": "2",
+      "name": "Completed"
+    },
+    {
+      "id": "3",
+      "name": "Failed"
+    }
+  ]
+}
