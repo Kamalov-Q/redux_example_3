@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { postTodos } from "../../store/features/todoSlice";
 
-const AddModal = ({ open, closeModal, getData }) => {
+const AddModal = ({ open, closeModal }) => {
 
     const [statuses, setStatuses] = useState([]);
 
@@ -10,32 +12,28 @@ const AddModal = ({ open, closeModal, getData }) => {
         })
         const statusData = await response.json();
         setStatuses(statusData);
-        closeModal();
-        getData();
     }
+
+    const dispatch = useDispatch();
+
 
     const [title, setTitle] = useState("");
     const [desc, setDesc] = useState("");
     const [status, setStatus] = useState("");
 
-    const postTodo = async (e) => {
+    const addTodo = (e) => {
         e?.preventDefault();
         const id = crypto.randomUUID();
-        console.log("ID", id);
-        const response = await fetch(`http://localhost:4000/todos`, {
-            method: "POST",
-            headers: { "Content-type": "application/json" },
-            body: JSON.stringify({
-                id: id,
-                title: title,
-                description: desc,
-                status: status
-            })
-        });
-        const postData = await response.json();
-        console.log("ADded", postData);
+        const newTodo = {
+            id: id,
+            title: title,
+            description: desc,
+            status: status
+        }
+        dispatch(postTodos(newTodo));
+        console.log("Added");
+        closeModal();
     }
-
 
     useEffect(() => {
         getStatuses();
@@ -53,7 +51,9 @@ const AddModal = ({ open, closeModal, getData }) => {
                 className="bg-white lg:w-[550px] md:w-[730px] h-auto max-h-[90vh] overflow-y-auto no-scrollbar rounded-3xl px-6 py-5"
             >
                 <div className="py-2 px-3 my-2">Add Todo</div>
-                <form onSubmit={postTodo}>
+                <form onSubmit={(e) => {
+                    addTodo(e)
+                }}>
                     <div className="mb-5">
                         <input type="text" id="base-input" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required placeholder="Title" onChange={(e) => setTitle(e?.target?.value)} />
                     </div>

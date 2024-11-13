@@ -2,15 +2,15 @@
   "todos": [
     {
       "id": "2",
-      "title": "Uzgardi12",
-      "description": "Todo 21211",
-      "status": "Progress"
+      "title": "Kamalov2",
+      "description": "Qushdim",
+      "status": "Completed"
     },
     {
       "id": "3",
       "title": "fugiat veniam minus",
-      "status": "Failed",
-      "description": "Todo 3"
+      "description": "Todo 3",
+      "status": "Failed"
     },
     {
       "id": "4",
@@ -27,8 +27,8 @@
     {
       "id": "6",
       "title": "qui ullam ratione quibusdam voluptatem quia omnis",
-      "status": "Progress",
-      "description": "Todo 6"
+      "description": "Todo 6",
+      "status": "Progress"
     },
     {
       "id": "7",
@@ -39,8 +39,8 @@
     {
       "id": "8",
       "title": "quo adipisci enim quam ut ab",
-      "status": "Progress",
-      "description": "Todo 8"
+      "description": "Todo 8",
+      "status": "Completed"
     },
     {
       "id": "9",
@@ -49,16 +49,10 @@
       "description": "Todo 9"
     },
     {
-      "id": "10",
-      "title": "illo est ratione doloremque quia maiores aut",
-      "status": "Completed",
-      "description": "Todo 10"
-    },
-    {
-      "id": "f9b14257-b765-4568-aeac-698f61d4aada",
-      "title": "Kamalov added",
-      "description": "Quwildi",
-      "status": "Completed"
+      "id": "b2040062-c984-44a5-b1c4-3a0525e080f8",
+      "title": "Qushdim",
+      "description": "Qushidm test",
+      "status": "Progress"
     }
   ],
   "statuses": [

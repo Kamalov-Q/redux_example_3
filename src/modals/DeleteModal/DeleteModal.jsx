@@ -1,16 +1,28 @@
+import { useDispatch } from "react-redux";
+import { deleteTodos, getTodos } from "../../store/features/todoSlice";
 
 const DeleteModal = ({ open, closeModal, id, getData }) => {
 
-    const deleteTodo = async (e) => {
+    // const deleteTodo = async (e) => {
+    //     e?.preventDefault();
+    //     const response = await fetch(`http://localhost:4000/todos/${id}`, {
+    //         method: "DELETE",
+    //     })
+    //     const delData = await response.json();
+    //     closeModal()
+    //     console.log("DELETED", delData);
+    //     getData();
+    // }
+
+    const dispatch = useDispatch();
+
+    const deleteTodo = (e) => {
         e?.preventDefault();
-        const response = await fetch(`http://localhost:4000/todos/${id}`, {
-            method: "DELETE",
-        })
-        const delData = await response.json();
-        closeModal()
-        console.log("DELETED", delData);
-        getData();
+        dispatch(deleteTodos({ id }));
+        closeModal();
+        window.location.reload();
     }
+
 
     console.log("DelData", id);
     return (

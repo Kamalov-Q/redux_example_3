@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { getTodos, putTodos } from "../../store/features/todoSlice";
 
-const EditModal = ({ open, closeModal, data, getData }) => {
+const EditModal = ({ open, closeModal, data }) => {
 
     const [editData, setEditData] = useState({
         id: data.id,
@@ -8,24 +10,7 @@ const EditModal = ({ open, closeModal, data, getData }) => {
         description: data?.description,
         status: data?.status
     })
-
-
-    const putData = async (e) => {
-        e?.preventDefault();
-        const response = await fetch(`http://localhost:4000/todos/${data?.id}`, {
-            method: "PUT",
-            body: JSON.stringify({
-                id: editData.id,
-                title: editData.title,
-                description: editData.description,
-                status: editData.status
-            })
-        })
-        const editInfo = await response.json();
-        console.log("EditData", editInfo);
-        closeModal();
-        getData();
-    }
+    const dispatch = useDispatch();
 
     const [statuses, setStatuses] = useState([]);
 
@@ -37,9 +22,25 @@ const EditModal = ({ open, closeModal, data, getData }) => {
         setStatuses(statusData);
     }
 
+    const editTodo = (e) => {
+        e?.preventDefault();
+        const updTodo = {
+            id: editData.id,
+            title: editData.title,
+            description: editData.description,
+            status: editData.status
+        }
+        dispatch(putTodos({ id: editData.id, updTodo }));
+        console.log("EDITED");
+        closeModal();
+        window.location.reload();
+    }
+
+
     useEffect(() => {
         getStatuses();
-    }, [])
+    }, []);
+
 
     return (
         open ? <div
@@ -70,7 +71,10 @@ const EditModal = ({ open, closeModal, data, getData }) => {
                             ))}
                         </select>
                     </div>
-                    <button className="bg-blue-700 border-none px-5 py-2 text-white" onClick={(e) => putData(e)}>Edit</button>
+                    <button className="bg-blue-700 border-none px-5 py-2 text-white" onClick={(e) => {
+                        e?.preventDefault();
+                        editTodo(e);
+                    }}>Edit</button>
                 </form>
             </div>
         </div> : null
